@@ -1,5 +1,5 @@
 {
-  "name": "@heraclius/remote-dom",
+  "name": "@heraclius/remote-addon-dom",
   "version": "1.0.0",
   "description": "",
   "type": "module",
