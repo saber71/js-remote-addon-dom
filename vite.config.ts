@@ -5,6 +5,8 @@ import { resolve } from "path"
 import dtsPlugin from "vite-plugin-dts"
 
 export default defineConfig({
+  root: resolve(__dirname, "test/page"),
+  publicDir: resolve(__dirname, "test/page/public"),
   plugins: [dtsPlugin({ rollupTypes: true }), swc.vite(), externalDepsPlugin()],
   build: {
     lib: {

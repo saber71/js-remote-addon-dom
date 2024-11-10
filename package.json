@@ -1,10 +1,11 @@
 {
   "name": "@heraclius/remote-addon-dom",
   "version": "1.0.0",
-  "description": "",
+  "description": "服务器可以通过网络远程操作DOM",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "watch": "vite build --watch",
     "test": "vitest run"
