@@ -1,5 +1,5 @@
 {
-  "name": "@heraclius",
+  "name": "@heraclius/remote-dom",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -24,6 +24,6 @@
     "dist"
   ],
   "peerDependencies": {
-
+    "@heraclius/remote": "github:saber71/js-remote"
   }
 }
