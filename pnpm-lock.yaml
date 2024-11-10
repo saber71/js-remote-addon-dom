@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@heraclius/remote':
         specifier: github:saber71/js-remote
-        version: https://codeload.github.com/saber71/js-remote/tar.gz/d35fd15b9c2b893fb87ff79d38230aa0d4bc8f9e
+        version: https://codeload.github.com/saber71/js-remote/tar.gz/b710a0c05e11eba5b962dc34a0ee3b626f884a91
     devDependencies:
       '@heraclius/external-deps-plugin':
         specifier: ^1.1.0
@@ -193,8 +193,8 @@ packages:
     peerDependencies:
       vite: ^5.3.3
 
-  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/d35fd15b9c2b893fb87ff79d38230aa0d4bc8f9e':
-    resolution: {tarball: https://codeload.github.com/saber71/js-remote/tar.gz/d35fd15b9c2b893fb87ff79d38230aa0d4bc8f9e}
+  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/b710a0c05e11eba5b962dc34a0ee3b626f884a91':
+    resolution: {tarball: https://codeload.github.com/saber71/js-remote/tar.gz/b710a0c05e11eba5b962dc34a0ee3b626f884a91}
     version: 1.0.0
 
   '@jridgewell/sourcemap-codec@1.5.0':
@@ -987,7 +987,7 @@ snapshots:
     dependencies:
       vite: 5.4.10(@types/node@22.9.0)
 
-  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/d35fd15b9c2b893fb87ff79d38230aa0d4bc8f9e': {}
+  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/b710a0c05e11eba5b962dc34a0ee3b626f884a91': {}
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
