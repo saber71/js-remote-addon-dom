@@ -147,11 +147,10 @@ function listenEvent(element: HTMLElement, event: string, remote: Remote) {
 
 /**
  * 创建DOM元素
- * @param cmd 创建命令
- * @param remote 远程实例
  * @returns 创建的DOM元素
  */
-function createDom(cmd: IRemoteCommandCreateDom, remote: Remote) {
+function createDom(cmd: IRemoteCommandCreateDom, remote: Remote, parent?: HTMLElement) {
+  console.log(cmd)
   const el = document.createElement(cmd.element)
   if (cmd.attributes) {
     for (let key in cmd.attributes) {
@@ -165,15 +164,18 @@ function createDom(cmd: IRemoteCommandCreateDom, remote: Remote) {
   }
   if (cmd.children) {
     for (let child of cmd.children) {
-      el.appendChild(createDom(child, remote))
+      createDom(child, remote, el)
     }
   }
-  if (cmd.parent || !cmd.independent) {
+  if (parent) {
+    console.log("parent", parent.id)
+    parent.appendChild(el)
+  } else if (cmd.parent || !cmd.independent) {
     const parent = elementMap.get(cmd.parent || "body")
     parent?.appendChild(el)
   }
   if (cmd.listenEvents) cmd.listenEvents.forEach((event) => listenEvent(el, event, remote))
-  el.innerText = cmd.textContent || ""
+  if (cmd.textContent) el.innerText = cmd.textContent
   return el
 }
 

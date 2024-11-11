@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@heraclius/remote':
         specifier: github:saber71/js-remote
-        version: https://codeload.github.com/saber71/js-remote/tar.gz/9b714af4ac7c8ca959e5ad013d1ca7f51b3f6236(eventemitter3@5.0.1)
+        version: https://codeload.github.com/saber71/js-remote/tar.gz/4ac62ede6a19c56584c0d5ef7b67d9e15fd4fe7f(eventemitter3@5.0.1)
     devDependencies:
       '@heraclius/external-deps-plugin':
         specifier: github:saber71/vite-external-deps-plugin
@@ -194,8 +194,8 @@ packages:
     peerDependencies:
       vite: ^5.3.3
 
-  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/9b714af4ac7c8ca959e5ad013d1ca7f51b3f6236':
-    resolution: {tarball: https://codeload.github.com/saber71/js-remote/tar.gz/9b714af4ac7c8ca959e5ad013d1ca7f51b3f6236}
+  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/4ac62ede6a19c56584c0d5ef7b67d9e15fd4fe7f':
+    resolution: {tarball: https://codeload.github.com/saber71/js-remote/tar.gz/4ac62ede6a19c56584c0d5ef7b67d9e15fd4fe7f}
     version: 1.0.0
     peerDependencies:
       eventemitter3: ^5.0.1
@@ -993,7 +993,7 @@ snapshots:
     dependencies:
       vite: 5.4.11(@types/node@22.9.0)
 
-  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/9b714af4ac7c8ca959e5ad013d1ca7f51b3f6236(eventemitter3@5.0.1)':
+  '@heraclius/remote@https://codeload.github.com/saber71/js-remote/tar.gz/4ac62ede6a19c56584c0d5ef7b67d9e15fd4fe7f(eventemitter3@5.0.1)':
     dependencies:
       eventemitter3: 5.0.1
 
