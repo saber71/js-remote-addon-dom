@@ -150,7 +150,6 @@ function listenEvent(element: HTMLElement, event: string, remote: Remote) {
  * @returns 创建的DOM元素
  */
 function createDom(cmd: IRemoteCommandCreateDom, remote: Remote, parent?: HTMLElement) {
-  console.log(cmd)
   const el = document.createElement(cmd.element)
   if (cmd.attributes) {
     for (let key in cmd.attributes) {
@@ -168,7 +167,6 @@ function createDom(cmd: IRemoteCommandCreateDom, remote: Remote, parent?: HTMLEl
     }
   }
   if (parent) {
-    console.log("parent", parent.id)
     parent.appendChild(el)
   } else if (cmd.parent || !cmd.independent) {
     const parent = elementMap.get(cmd.parent || "body")
@@ -308,6 +306,7 @@ export class RemoteAddonDom implements IRemoteAddon {
    */
   handleOpen(): void {
     elementMap.set("body", document.body)
+    elementMap.set("head", document.head)
   }
 
   /**

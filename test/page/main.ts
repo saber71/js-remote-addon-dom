@@ -7,25 +7,33 @@ remote.addAddon(new RemoteAddonDom())
 connector.open()
 window.onload = () => {
   connector.sendFromClient(
-    JSON.stringify({
-      type: "create-dom",
-      element: "div",
-      attributes: { style: "color:red", id: "123" },
-      listenEvents: ["click"],
-      children: [
-        {
-          type: "create-dom",
-          element: "span",
-          textContent: "child",
-          attributes: { style: "color:blue;background:black;", id: "child" }
-        },
-        {
-          type: "create-dom",
-          element: "input",
-          attributes: { style: "color:blue;background:red;", id: "input" }
-        }
-      ]
-    })
+    JSON.stringify([
+      {
+        type: "create-dom",
+        element: "div",
+        attributes: { style: "color:red", id: "123" },
+        listenEvents: ["click"],
+        children: [
+          {
+            type: "create-dom",
+            element: "span",
+            textContent: "child",
+            attributes: { style: "color:blue;background:black;", id: "child" }
+          },
+          {
+            type: "create-dom",
+            element: "input",
+            attributes: { style: "color:blue;background:red;", id: "input" }
+          }
+        ]
+      },
+      {
+        type: "create-dom",
+        element: "style",
+        parent: "head",
+        textContent: "div{height:200px;background:yellow;}"
+      }
+    ])
   )
   connector.on("dispatch:click", () => {
     connector.sendFromClient(
