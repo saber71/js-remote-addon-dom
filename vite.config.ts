@@ -13,6 +13,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"),
       fileName: "index",
       formats: ["es"]
-    }
+    },
+    outDir: resolve(__dirname, "dist")
   }
 })

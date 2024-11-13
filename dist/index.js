@@ -57,10 +57,8 @@ const elementListeners = new Map();
 }
 /**
  * 创建DOM元素
- * @param cmd 创建命令
- * @param remote 远程实例
  * @returns 创建的DOM元素
- */ function createDom(cmd, remote) {
+ */ function createDom(cmd, remote, parent) {
     const el = document.createElement(cmd.element);
     if (cmd.attributes) {
         for(let key in cmd.attributes){
@@ -74,15 +72,17 @@ const elementListeners = new Map();
     }
     if (cmd.children) {
         for (let child of cmd.children){
-            el.appendChild(createDom(child, remote));
+            createDom(child, remote, el);
         }
     }
-    if (cmd.parent || !cmd.independent) {
+    if (parent) {
+        parent.appendChild(el);
+    } else if (cmd.parent || !cmd.independent) {
         const parent = elementMap.get(cmd.parent || "body");
         parent?.appendChild(el);
     }
     if (cmd.listenEvents) cmd.listenEvents.forEach((event)=>listenEvent(el, event, remote));
-    el.innerText = cmd.textContent || "";
+    if (cmd.textContent) el.innerText = cmd.textContent;
     return el;
 }
 /**
@@ -206,6 +206,7 @@ const elementListeners = new Map();
    * 当插件被加载时调用
    */ handleOpen() {
         elementMap.set("body", document.body);
+        elementMap.set("head", document.head);
     }
     /**
    * 当插件被卸载时调用
